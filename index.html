@@ -34,16 +34,16 @@ section{padding:96px 0}
 /* NAV */
 .nav{position:sticky;top:0;z-index:20;background:rgba(11,10,28,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
-.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px}
 .brand:hover{color:#fff}
 .brand img{width:42px;height:42px;border-radius:50%}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
-.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:#E8E2FA;text-decoration:none;font-size:15px;font-weight:500;border-radius:6px}
+.nav-links a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:#E8E2FA;text-decoration:none;font-size:15px;font-weight:500;border-radius:6px}
 .nav-links a:hover{color:#fff;background:var(--indigo-2)}
 .nav-links a.cta{background:var(--accent);color:var(--indigo);font-weight:600;margin-left:8px}
 .nav-links a.cta:hover{background:#FF7D95;color:var(--indigo)}
 .menu-btn{display:none;min-height:44px;min-width:44px;background:none;border:1px solid var(--line);border-radius:8px;color:#fff;cursor:pointer}
-@media (max-width:920px){
+@media (max-width:1180px){
   .menu-btn{display:inline-flex;align-items:center;justify-content:center}
   .nav-links{display:none;position:absolute;left:0;right:0;top:68px;flex-direction:column;align-items:stretch;background:var(--indigo);padding:8px 20px 20px;border-bottom:1px solid var(--line)}
   .nav-links.open{display:flex}
@@ -146,6 +146,13 @@ section{padding:96px 0}
 .person .name{font-weight:600;font-size:17px;line-height:1.3}
 .person .aff{font-size:14px;color:var(--muted);line-height:1.4}
 .person a{font-size:14px;margin-top:8px;word-break:break-all}
+.speakers-soon{display:flex;flex-wrap:wrap;align-items:center;gap:28px 40px;border:1.5px dashed #B9AEDD;border-radius:14px;padding:36px 40px;background:#fff}
+.soon-avatars{display:flex}
+.soon-avatars span{width:64px;height:64px;border-radius:50%;background:var(--tint);border:3px solid #fff;margin-left:-16px;box-shadow:0 0 0 1px #D3C9EA}
+.soon-avatars span:first-child{margin-left:0}
+.soon-avatars span:nth-child(2){background:#E2D9F7}.soon-avatars span:nth-child(3){background:#D3C4F2}.soon-avatars span:nth-child(4){background:var(--accent)}
+.soon-title{font-family:var(--display);font-weight:800;font-size:32px;color:var(--indigo);line-height:1.1}
+.soon-text{color:var(--muted);margin-top:6px}
 .group-label{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:40px 0 16px}
 .group-label:first-of-type{margin-top:0}
 @media (max-width:1000px){.people{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -165,6 +172,14 @@ section{padding:96px 0}
 .logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .logos-lg{grid-template-columns:repeat(2,minmax(0,1fr))}
 .logos-sm{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tier{background:#fff;border:1.5px dashed #B9AEDD;border-radius:10px;min-height:120px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+.tier-name{font-family:var(--display);font-weight:800;font-size:26px;color:var(--indigo)}
+.tier-tba{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.potential{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.potential li{background:#fff;border:1px solid #E0D8F0;border-radius:8px;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 16px;font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);line-height:1.2}
+.potential-note{margin-top:16px;font-size:15px;color:var(--muted)}
+@media (max-width:700px){.tiers{grid-template-columns:1fr}}
 .logo-slot{background:#fff;border:1.5px dashed #B9AEDD;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--muted)}
 .logos-lg .logo-slot{min-height:160px}
 .logos-sm .logo-slot{min-height:96px}
@@ -210,6 +225,7 @@ footer a:hover{color:var(--accent)}
       <li><a href="#themes">Themes</a></li>
       <li><a href="#ai">AI sessions</a></li>
       <li><a href="#programme">Programme</a></li>
+      <li><a href="#speakers">Speakers</a></li>
       <li><a href="#committee">Organisers</a></li>
       <li><a href="#venue">Venue</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
@@ -392,13 +408,32 @@ footer a:hover{color:var(--accent)}
     <aside class="dates" aria-labelledby="dates-title">
       <h3 id="dates-title">Important dates</h3>
       <dl>
-        <div class="row"><dt>Registration opens</dt><dd>[TBA]</dd></div>
-        <div class="row"><dt>Abstract submission deadline</dt><dd>[TBA]</dd></div>
-        <div class="row"><dt>Notification of acceptance</dt><dd>[TBA]</dd></div>
-        <div class="row"><dt>Registration closes</dt><dd>[TBA]</dd></div>
+        <div class="row"><dt>Registration opens</dt><dd>15 December 2026</dd></div>
+        <div class="row"><dt>Abstract submission deadline</dt><dd>28 February 2027</dd></div>
+        <div class="row"><dt>Notification of acceptance</dt><dd>20 March 2027</dd></div>
+        <div class="row"><dt>Early-bird registration closes</dt><dd>10 April 2027</dd></div>
         <div class="row"><dt>Conference</dt><dd>21–24 July 2027</dd></div>
       </dl>
     </aside>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section id="speakers" aria-labelledby="speakers-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Programme</p>
+        <h2 id="speakers-title">Invited speakers</h2>
+      </div>
+    </div>
+    <div class="speakers-soon">
+      <div class="soon-avatars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div>
+        <p class="soon-title">Updated soon</p>
+        <p class="soon-text">The list of invited speakers will be announced here once invitations are confirmed.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -412,16 +447,11 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
 
-    <p class="group-label">Local organisers · IISER Bhopal</p>
     <div class="people">
       <div class="person"><span class="avatar" aria-hidden="true">VS</span><span class="name">Varadharajan Srinivasan</span><span class="aff">Department of Chemistry, IISER Bhopal</span><a href="mailto:vardha@iiserb.ac.in">vardha@iiserb.ac.in</a></div>
       <div class="person"><span class="avatar" aria-hidden="true">NG</span><span class="name">Nirmal Ganguli</span><span class="aff">Department of Physics, IISER Bhopal</span><a href="mailto:nganguli@iiserb.ac.in">nganguli@iiserb.ac.in</a></div>
       <div class="person"><span class="avatar" aria-hidden="true">SV</span><span class="name">Sai Phani Vangala</span><span class="aff">Department of Chemical Engineering, IISER Bhopal</span><a href="mailto:saiphani@iiserb.ac.in">saiphani@iiserb.ac.in</a></div>
       <div class="person"><span class="avatar" aria-hidden="true">AN</span><span class="name">Apurba Nandi</span><span class="aff">Department of Chemistry, IISER Bhopal</span><a href="mailto:apurba@iiserb.ac.in">apurba@iiserb.ac.in</a></div>
-    </div>
-
-    <p class="group-label">Organisers</p>
-    <div class="people">
       <div class="person"><span class="avatar" aria-hidden="true">PG</span><span class="name">Prasenjit Ghosh</span><span class="aff">IISER Pune</span><a href="mailto:pghosh@iiserpune.ac.in">pghosh@iiserpune.ac.in</a></div>
       <div class="person"><span class="avatar" aria-hidden="true">SN</span><span class="name">Shobhana Narasimhan</span><span class="aff">Theoretical Sciences Unit, JNCASR Bengaluru</span><a href="mailto:shobhana@jncasr.ac.in">shobhana@jncasr.ac.in</a></div>
       <div class="person"><span class="avatar" aria-hidden="true">MJ</span><span class="name">Manish Jain</span><span class="aff">Department of Physics, IISc Bengaluru</span><a href="mailto:mjain@iisc.ac.in">mjain@iisc.ac.in</a></div>
@@ -467,24 +497,33 @@ footer a:hover{color:var(--accent)}
       <p>Our sponsors help keep HAMARI Psi-k accessible to students, early-career researchers and scholars from developing nations.</p>
     </div>
 
-    <p class="group-label">Platinum sponsors</p>
-    <div class="logos logos-lg">
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
+    <div class="tiers">
+      <div class="tier"><span class="tier-name">Platinum</span><span class="tier-tba">To be announced</span></div>
+      <div class="tier"><span class="tier-name">Gold</span><span class="tier-tba">To be announced</span></div>
+      <div class="tier"><span class="tier-name">Silver</span><span class="tier-tba">To be announced</span></div>
     </div>
-    <p class="group-label">Gold sponsors</p>
-    <div class="logos">
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
-    </div>
-    <p class="group-label">Silver sponsors &amp; partners</p>
-    <div class="logos logos-sm">
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
-      <div class="logo-slot">[Sponsor logo]</div>
-    </div>
+
+    <p class="group-label" style="margin-top:44px">Potential sponsors <span style="text-transform:none;letter-spacing:0">(to be confirmed)</span></p>
+    <ul class="potential">
+      <li>Dassault Systèmes</li>
+      <li>Applied Materials</li>
+      <li>Netweb Technologies</li>
+      <li>Gaussian</li>
+      <li>Schrödinger</li>
+      <li>Aspara</li>
+      <li>Anthropic</li>
+      <li>D. E. Shaw</li>
+      <li>Daffodil Technologies</li>
+      <li>VASP</li>
+      <li>Prescience Insilico</li>
+      <li>TCG-CREST</li>
+      <li>RSC</li>
+      <li>Wiley</li>
+      <li>PRL</li>
+      <li>IBM</li>
+      <li>TCS Research</li>
+    </ul>
+    <p class="potential-note">Sponsorship tiers are being finalised. Confirmed Platinum, Gold and Silver sponsors will be listed here.</p>
 
     <div class="become">
       <div>
@@ -502,7 +541,7 @@ footer a:hover{color:var(--accent)}
   <div class="wrap">
     <div>
       <h2 id="register-title">Join us in Bhopal</h2>
-      <p>Registration and abstract submission open soon. Students, early-career researchers and scholars from developing nations are especially encouraged to take part.</p>
+      <p>Registration opens on <strong>15 December 2026</strong>. Submit your abstract by <strong>28 February 2027</strong>; early-bird registration closes on <strong>10 April 2027</strong>. Students, early-career researchers and scholars from developing nations are especially encouraged to take part.</p>
       <p style="font-size:16px;margin-top:10px">Questions? Write to <a href="mailto:hamaripsik2027@iiserb.ac.in" style="color:#fff;font-weight:600">hamaripsik2027@iiserb.ac.in</a></p>
     </div>
     <a class="btn btn-primary" href="#register">[REGISTRATION LINK]</a>
