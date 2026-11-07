@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HAMARI Psi-k 2027 · IISER Bhopal · 21–24 July 2027</title>
+<meta name="description" content="HAMARI Psi-k 2027, an international conference and the third Indian Psi-k meeting on electronic-structure theory, computational materials science and molecular modelling. IISER Bhopal, 21–24 July 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600&display=swap">
+<style>
+:root{
+  --indigo:#1E1147; --indigo-2:#2E1B66; --night:#0B0A1C; --line:#4A3A8A;
+  --accent:#FF5C7A; --paper:#FFFFFF; --tint:#F4F0FB; --ink:#0B0A1C; --muted:#4F4866;
+  --pale:#CFC6EE; --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --wrap:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--indigo)}
+a:hover{color:#140B33}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(32px,4.2vw,48px);font-weight:800;letter-spacing:-.015em;color:var(--indigo)}
+h3{font-size:22px;font-weight:600}
+p{margin:0;text-wrap:pretty}
+section{padding:96px 0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,10,28,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px}
+.brand:hover{color:#fff}
+.brand img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:#E8E2FA;text-decoration:none;font-size:15px;font-weight:500;border-radius:6px}
+.nav-links a:hover{color:#fff;background:var(--indigo-2)}
+.nav-links a.cta{background:var(--accent);color:var(--indigo);font-weight:600;margin-left:8px}
+.nav-links a.cta:hover{background:#FF7D95;color:var(--indigo)}
+.menu-btn{display:none;min-height:44px;min-width:44px;background:none;border:1px solid var(--line);border-radius:8px;color:#fff;cursor:pointer}
+@media (max-width:920px){
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  .nav-links{display:none;position:absolute;left:0;right:0;top:68px;flex-direction:column;align-items:stretch;background:var(--indigo);padding:8px 20px 20px;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-links a.cta{margin:8px 0 0;justify-content:center}
+}
+
+/* HERO */
+.hero{position:relative;background:var(--night);color:#fff;overflow:hidden;padding:88px 0 0}
+.hero svg.lattice{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:1px solid #9A7FE6;padding:7px 14px;border-radius:999px;margin-bottom:28px}
+.hero h1{font-size:clamp(56px,8.6vw,112px);font-weight:800;letter-spacing:-.025em;line-height:.92}
+.hero h1 span{color:var(--accent);display:block}
+.hero .lede{max-width:560px;margin-top:26px;font-size:20px;line-height:1.5;color:#E8E2FA}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--accent);color:var(--indigo)}
+.btn-primary:hover{background:#FF7D95;color:var(--indigo)}
+.btn-ghost{border-color:#9A7FE6;color:#fff;background:transparent}
+.btn-ghost:hover{background:var(--indigo-2);color:#fff}
+.logo-wrap{justify-self:center;position:relative}
+.logo-wrap img{width:min(360px,80vw);aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 6px var(--night),0 0 0 8px #fff,0 0 60px 10px rgba(108,72,255,.35)}
+.strip{position:relative;margin-top:80px;background:#4B2BC4;color:#fff}
+.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 32px;padding-top:22px;padding-bottom:22px;grid-template-columns:none}
+.strip .date{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.01em}
+.strip .place{font-weight:600;font-size:17px;line-height:1.35}
+.formats{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--display);font-weight:600;font-size:18px}
+.formats i{font-style:normal;color:var(--accent)}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .logo-wrap{order:-1;justify-self:start}
+  .logo-wrap img{width:180px}
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.about-grid .body{display:flex;flex-direction:column;gap:18px;color:var(--ink)}
+.aims{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.aims li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.aims svg{margin-top:3px}
+.editions{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.timeline{list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-left:2px solid #D3C9EA}
+.timeline li{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;padding:12px 0 12px 22px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #9A7FE6}
+.timeline li.now::before{background:var(--accent);border-color:var(--accent)}
+.timeline .yr{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:2px}
+.timeline .ed{font-size:15px;color:var(--muted);line-height:1.4}
+.timeline .ed b{display:block;font-family:var(--display);font-size:20px;font-weight:800;color:var(--indigo)}
+.timeline li.now .ed b{color:var(--accent-ink,#C8264A)}
+.edition{font-family:var(--mono);font-size:13px;letter-spacing:.06em;padding:8px 14px;border-radius:999px;border:1px solid #D3C9EA;color:var(--muted)}
+.edition.now{background:var(--indigo);border-color:var(--indigo);color:#fff}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px}}
+
+/* THEMES */
+.themes{background:var(--tint)}
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 48px;margin-bottom:48px}
+.section-head p{max-width:460px;color:var(--muted)}
+.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.theme{background:#fff;border-radius:10px;padding:28px 26px 30px;border-top:4px solid var(--indigo);display:flex;flex-direction:column;gap:14px}
+.theme .num{font-family:var(--mono);font-size:14px;color:var(--indigo)}
+.theme h3{color:var(--ink);font-size:24px}
+.theme ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--muted)}
+.theme li{padding-left:18px;position:relative;line-height:1.45}
+.theme li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+@media (max-width:900px){.theme-grid{grid-template-columns:1fr}}
+
+/* AI */
+.ai{background:var(--night);color:#fff;position:relative;overflow:hidden}
+.ai h2{color:#fff}
+.ai .eyebrow{color:var(--pale)}
+.ai .section-head p{color:#D8D0F0}
+.ai-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.ai-card{border:1px solid var(--line);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:12px;background:rgba(46,27,102,.45)}
+.ai-card .kind{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.ai-card h3{font-size:22px;color:#fff}
+.ai-card p{color:#D8D0F0;font-size:15px}
+@media (max-width:900px){.ai-grid{grid-template-columns:1fr}}
+
+/* PROGRAMME / DATES */
+.prog-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px}
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:32px}
+.day{border:1px solid #E0D8F0;border-radius:10px;padding:18px 16px}
+.day b{display:block;font-family:var(--display);font-size:30px;font-weight:800;color:var(--indigo);line-height:1}
+.day span{font-size:14px;color:var(--muted)}
+.prog-note{margin-top:24px;color:var(--muted);font-size:15px}
+.dates{background:var(--tint);border-radius:12px;padding:32px}
+.dates h3{color:var(--indigo);margin-bottom:18px}
+.dates dl{margin:0;display:grid;gap:0}
+.dates .row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid #D3C9EA}
+.dates .row:first-child{border-top:0}
+.dates dt{font-weight:500}
+.dates dd{margin:0;font-family:var(--mono);font-size:14px;color:var(--muted);text-align:right}
+@media (max-width:900px){.prog-grid{grid-template-columns:1fr;gap:40px}.days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* COMMITTEE */
+.committee{background:var(--tint)}
+.people{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.person{background:#fff;border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:4px}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--indigo);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:17px;margin-bottom:12px}
+.person .name{font-weight:600;font-size:17px;line-height:1.3}
+.person .aff{font-size:14px;color:var(--muted);line-height:1.4}
+.person a{font-size:14px;margin-top:8px;word-break:break-all}
+.group-label{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:40px 0 16px}
+.group-label:first-of-type{margin-top:0}
+@media (max-width:1000px){.people{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.people{grid-template-columns:1fr}}
+
+/* VENUE */
+.venue-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.venue-card{position:relative;background:var(--indigo);border-radius:14px;min-height:320px;overflow:hidden;color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:flex-end}
+.venue-card svg{position:absolute;inset:0;width:100%;height:100%}
+.venue-card .big{position:relative;font-family:var(--display);font-weight:800;font-size:44px;line-height:1}
+.venue-card .small{position:relative;color:#E8E2FA;margin-top:8px}
+.venue-grid .body{display:flex;flex-direction:column;gap:18px}
+@media (max-width:860px){.venue-grid{grid-template-columns:1fr;gap:32px}}
+
+/* SPONSORS */
+.sponsors{background:var(--tint)}
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.logos-lg{grid-template-columns:repeat(2,minmax(0,1fr))}
+.logos-sm{grid-template-columns:repeat(4,minmax(0,1fr))}
+.logo-slot{background:#fff;border:1.5px dashed #B9AEDD;border-radius:10px;min-height:120px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.logos-lg .logo-slot{min-height:160px}
+.logos-sm .logo-slot{min-height:96px}
+.become{margin-top:48px;background:var(--indigo);color:#fff;border-radius:14px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 40px;align-items:center}
+.become h3{font-size:28px;font-weight:800;margin-bottom:10px}
+.become p{color:#E8E2FA;max-width:620px}
+.become .btn-primary{color:var(--night)}
+.become-mail{grid-column:2;text-align:center;font-size:14px;margin-top:-6px}
+@media (max-width:900px){.logos,.logos-lg{grid-template-columns:repeat(2,minmax(0,1fr))}.logos-sm{grid-template-columns:repeat(2,minmax(0,1fr))}.become{grid-template-columns:1fr}.become-mail{grid-column:auto;text-align:left}}
+
+/* REGISTER */
+.register{background:#4B2BC4;color:#fff}
+.register .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px}
+.register h2{color:#fff}
+.register p{max-width:560px;margin-top:14px;font-size:18px}
+.register .btn-primary{background:var(--accent);color:var(--night)}
+.register .btn-primary:hover{background:#FF7D95;color:var(--night)}
+
+/* FOOTER */
+footer{background:var(--night);color:#D8D0F0;padding:48px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+.foot-logos{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.foot-logos img{width:48px;height:48px;border-radius:50%;background:#fff}
+.host{display:flex;align-items:center;gap:14px;margin-top:36px}
+.host img{width:64px;height:64px;border-radius:50%;background:#fff;padding:3px;flex:none}
+.host span{font-size:15px;line-height:1.35;color:#E8E2FA;max-width:300px}
+.host small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pale);margin-bottom:2px}
+.venue-logo{position:absolute;right:32px;top:32px;width:128px;height:128px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 0 0 3px var(--accent)}
+footer a{color:#fff}
+footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.png" alt="">HAMARI Psi-k 2027</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#themes">Themes</a></li>
+      <li><a href="#ai">AI sessions</a></li>
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#committee">Organisers</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a class="cta" href="#register">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="lattice" aria-hidden="true" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 760">
+    <defs>
+      <pattern id="hex" width="31.18" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(8) scale(1.6)">
+        <path d="M15.59 0 V18 M15.59 18 L0 27 M15.59 18 L31.18 27 M0 27 V45 M31.18 27 V45 M0 45 L15.59 54 M31.18 45 L15.59 54" fill="none" stroke="#5B48A8" stroke-width="1"/>
+        <g fill="#9A7FE6"><circle cx="15.59" cy="18" r="2"/><circle cx="0" cy="27" r="2"/><circle cx="31.18" cy="27" r="2"/><circle cx="0" cy="45" r="2"/><circle cx="31.18" cy="45" r="2"/><circle cx="15.59" cy="0" r="2"/><circle cx="15.59" cy="54" r="2"/></g>
+      </pattern>
+      <radialGradient id="fade" cx="0.78" cy="0.42" r="0.6">
+        <stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".6" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      </radialGradient>
+      <mask id="m"><rect width="1440" height="760" fill="url(#fade)"/></mask>
+      <pattern id="hexR" width="31.18" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(8) scale(1.6)">
+        <path d="M15.59 0 V18 M15.59 18 L0 27 M15.59 18 L31.18 27 M0 27 V45 M31.18 27 V45 M0 45 L15.59 54 M31.18 45 L15.59 54" fill="none" stroke="#7A2440" stroke-width="1"/>
+        <g fill="#FF4D6D"><circle cx="15.59" cy="18" r="2.2"/><circle cx="0" cy="27" r="2.2"/><circle cx="0" cy="45" r="2.2"/><circle cx="15.59" cy="0" r="2.2"/></g>
+      </pattern>
+      <pattern id="hexB" width="31.18" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(8) scale(1.6)">
+        <path d="M15.59 0 V18 M15.59 18 L0 27 M15.59 18 L31.18 27 M0 27 V45 M31.18 27 V45 M0 45 L15.59 54 M31.18 45 L15.59 54" fill="none" stroke="#1F3F8F" stroke-width="1"/>
+        <g fill="#4C9BFF"><circle cx="15.59" cy="18" r="2.2"/><circle cx="31.18" cy="27" r="2.2"/><circle cx="31.18" cy="45" r="2.2"/><circle cx="15.59" cy="54" r="2.2"/></g>
+      </pattern>
+      <radialGradient id="fadeL" cx="0.05" cy="0.2" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <radialGradient id="fadeR" cx="0.95" cy="0.5" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <mask id="mL"><rect width="1440" height="760" fill="url(#fadeL)"/></mask>
+      <mask id="mR"><rect width="1440" height="760" fill="url(#fadeR)"/></mask>
+    </defs>
+    <rect width="1440" height="760" fill="url(#hex)" mask="url(#m)" opacity=".5"/>
+    <rect width="1440" height="760" fill="url(#hexR)" mask="url(#mL)"/>
+    <rect width="1440" height="760" fill="url(#hexB)" mask="url(#mR)"/>
+    <path d="M620 640 C 720 640, 760 470, 850 470 S 980 690, 1070 690 S 1220 520, 1440 520" fill="none" stroke="#FF5C7A" stroke-width="2.5" stroke-opacity=".5"/>
+  </svg>
+
+  <div class="wrap">
+    <div>
+      <div class="chip">International Conference <span aria-hidden="true" style="color:var(--accent)">·</span> 3rd Indian Psi-k Meeting</div>
+      <h1 id="hero-title">HAMARI <span>Psi-k 2027</span></h1>
+      <p class="lede">Recent advances in electronic-structure theory, computational materials science, molecular modelling and their applications.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#register">Register &amp; submit an abstract</a>
+        <a class="btn btn-ghost" href="#themes">Explore the themes</a>
+      </div>
+      <div class="host">
+        <img src="iiserb-logo.png" alt="IISER Bhopal logo">
+        <span><small>Hosted by</small>Indian Institute of Science Education and Research Bhopal</span>
+      </div>
+    </div>
+    <div class="logo-wrap"><img src="logo.png" alt="Hamari Psi-k, IISER Bhopal logo"></div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <span class="date">21–24 July 2027</span>
+      <span class="place">Indian Institute of Science Education and Research (IISER) Bhopal, India</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About the conference</p>
+      <h2 id="about-title">Our community’s meeting, at home in India</h2>
+      <ol class="timeline" aria-label="Conference editions">
+        <li><span class="yr">2023</span><span class="ed"><b>NAMMA Psi-k</b>JNCASR &amp; IISc, Bengaluru</span></li>
+        <li><span class="yr">2025</span><span class="ed"><b>AAPALI Psi-k</b>IISER Pune · 19–21 May</span></li>
+        <li class="now"><span class="yr">2027</span><span class="ed"><b>HAMARI Psi-k</b>IISER Bhopal · 21–24 July</span></li>
+      </ol>
+    </div>
+    <div class="body">
+      <p><strong>HAMARI Psi-k 2027</strong> is an international conference and the third edition of the biennial Indian Psi-k series. It brings researchers from India and around the world together at IISER Bhopal for invited talks, contributed talks, poster sessions and focused scientific discussions.</p>
+      <p>The series began with <strong>NAMMA Psi-k</strong>, held in Bengaluru in 2023 and hosted by JNCASR and IISc in partnership with the European Psi-k network. It was the first meeting to bring together nearly the entire Indian electronic-structure community. The second edition, <strong>AAPALI Psi-k</strong>, followed at IISER Pune from 19–21 May 2025. Each meeting is named for the word “ours” in the local language: <em>namma</em> in Kannada, <em>aapali</em> in Marathi and now <em>hamari</em> in Hindi.</p>
+      <p>The Indian electronic-structure community keeps growing, yet prominent international forums are not equally accessible to everyone. HAMARI Psi-k (<span lang="hi" style="font-family:'Noto Sans Devanagari',sans-serif">हमारी</span>) builds that exchange within India and keeps it open to scholars across the region.</p>
+      <ul class="aims">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E1147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Students and early-career researchers meet leading scientists, present their work, get feedback and build collaborations.</span></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E1147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10M7 17h10M7 7l10 10M17 7 7 17"/></svg><span>Exchange across theory, computation and experiment, from catalysis and energy research to quantum materials and molecular science.</span></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E1147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span>Broad access, with a particular focus on students, early-career investigators and researchers from developing nations.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section id="themes" class="themes" aria-labelledby="themes-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Scientific programme</p>
+        <h2 id="themes-title">Three themes, three parallel streams</h2>
+      </div>
+      <p>Each day runs three streams of talks in parallel, one per theme, with individual sessions on specific topics within it.</p>
+    </div>
+    <div class="theme-grid">
+      <article class="theme">
+        <span class="num">01</span>
+        <h3>Electronic-structure theory, methods &amp; algorithms</h3>
+        <ul>
+          <li>First-principles software and method development</li>
+          <li>Density-functional and density-matrix functional theories</li>
+          <li>Non-perturbative many-body methods</li>
+          <li>Open and nonequilibrium systems</li>
+        </ul>
+      </article>
+      <article class="theme">
+        <span class="num">02</span>
+        <h3>Molecular &amp; materials simulations</h3>
+        <ul>
+          <li>Phonons and electron–phonon interactions</li>
+          <li>Multiscale and reduced-scaling methods</li>
+          <li>Statistical sampling</li>
+          <li>Molecules, macromolecules and biomolecular systems</li>
+        </ul>
+      </article>
+      <article class="theme">
+        <span class="num">03</span>
+        <h3>Catalysis, energy &amp; chemical transformation</h3>
+        <ul>
+          <li>Catalysis and energy research</li>
+          <li>Quantum materials</li>
+          <li>High-throughput workflows and data analytics</li>
+          <li>AI and machine-learning methods for materials modelling</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AI -->
+<section id="ai" class="ai" aria-labelledby="ai-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Special sessions</p>
+        <h2 id="ai-title">AI in electronic-structure science</h2>
+      </div>
+      <p>Dedicated sessions on artificial intelligence in electronic-structure theory and materials simulation, from current applications to the questions they raise.</p>
+    </div>
+    <div class="ai-grid">
+      <article class="ai-card">
+        <span class="kind">Lecture</span>
+        <h3>“How AI Is Shaping the Future of the Scientific Process”</h3>
+        <p>A philosophical lecture on how AI is changing the way science is done.</p>
+      </article>
+      <article class="ai-card">
+        <span class="kind">Panel discussion</span>
+        <h3>Safe and responsible AI</h3>
+        <p>Policy design for the use of AI in computational electronic-structure research and in scientific publishing.</p>
+      </article>
+      <article class="ai-card">
+        <span class="kind">Young investigators</span>
+        <h3>AI in research &amp; computation in industry</h3>
+        <p>Sessions for young investigators on using AI in research, and on computational research careers in industry.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME + DATES -->
+<section id="programme" aria-labelledby="prog-title">
+  <div class="wrap prog-grid">
+    <div>
+      <p class="eyebrow">Programme</p>
+      <h2 id="prog-title">Four days in Bhopal</h2>
+      <div class="days">
+        <div class="day"><b>21</b><span>Wednesday</span></div>
+        <div class="day"><b>22</b><span>Thursday</span></div>
+        <div class="day"><b>23</b><span>Friday</span></div>
+        <div class="day"><b>24</b><span>Saturday</span></div>
+      </div>
+      <p class="prog-note">Oral presentations in three parallel sessions, poster sessions and shared scientific activities. Session titles, speakers and the timetable will be announced once invitations and contributions are confirmed.</p>
+    </div>
+    <aside class="dates" aria-labelledby="dates-title">
+      <h3 id="dates-title">Important dates</h3>
+      <dl>
+        <div class="row"><dt>Registration opens</dt><dd>[TBA]</dd></div>
+        <div class="row"><dt>Abstract submission deadline</dt><dd>[TBA]</dd></div>
+        <div class="row"><dt>Notification of acceptance</dt><dd>[TBA]</dd></div>
+        <div class="row"><dt>Registration closes</dt><dd>[TBA]</dd></div>
+        <div class="row"><dt>Conference</dt><dd>21–24 July 2027</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- COMMITTEE -->
+<section id="committee" class="committee" aria-labelledby="committee-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">People</p>
+        <h2 id="committee-title">Organising committee</h2>
+      </div>
+    </div>
+
+    <p class="group-label">Local organisers · IISER Bhopal</p>
+    <div class="people">
+      <div class="person"><span class="avatar" aria-hidden="true">VS</span><span class="name">Varadharajan Srinivasan</span><span class="aff">Department of Chemistry, IISER Bhopal</span><a href="mailto:vardha@iiserb.ac.in">vardha@iiserb.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">NG</span><span class="name">Nirmal Ganguli</span><span class="aff">Department of Physics, IISER Bhopal</span><a href="mailto:nganguli@iiserb.ac.in">nganguli@iiserb.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">SV</span><span class="name">Sai Phani Vangala</span><span class="aff">Department of Chemical Engineering, IISER Bhopal</span><a href="mailto:saiphani@iiserb.ac.in">saiphani@iiserb.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">AN</span><span class="name">Apurba Nandi</span><span class="aff">Department of Chemistry, IISER Bhopal</span><a href="mailto:apurba@iiserb.ac.in">apurba@iiserb.ac.in</a></div>
+    </div>
+
+    <p class="group-label">Organisers</p>
+    <div class="people">
+      <div class="person"><span class="avatar" aria-hidden="true">PG</span><span class="name">Prasenjit Ghosh</span><span class="aff">IISER Pune</span><a href="mailto:pghosh@iiserpune.ac.in">pghosh@iiserpune.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">SN</span><span class="name">Shobhana Narasimhan</span><span class="aff">Theoretical Sciences Unit, JNCASR Bengaluru</span><a href="mailto:shobhana@jncasr.ac.in">shobhana@jncasr.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">MJ</span><span class="name">Manish Jain</span><span class="aff">Department of Physics, IISc Bengaluru</span><a href="mailto:mjain@iisc.ac.in">mjain@iisc.ac.in</a></div>
+      <div class="person"><span class="avatar" aria-hidden="true">SG</span><span class="name">Subhradip Ghosh</span><span class="aff">Department of Physics, IIT Guwahati</span><a href="mailto:subhra@iitg.ac.in">subhra@iitg.ac.in</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section id="venue" aria-labelledby="venue-title">
+  <div class="wrap venue-grid">
+    <div class="venue-card">
+      <svg aria-hidden="true" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="hex2" width="31.18" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(-6) scale(1.3)">
+            <path d="M15.59 0 V18 M15.59 18 L0 27 M15.59 18 L31.18 27 M0 27 V45 M31.18 27 V45 M0 45 L15.59 54 M31.18 45 L15.59 54" fill="none" stroke="#3D2C80" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="600" height="340" fill="url(#hex2)"/>
+      </svg>
+      <img class="venue-logo" src="iiserb-logo.png" alt="IISER Bhopal logo">
+      <span class="big">IISER Bhopal</span>
+      <span class="small">Bhopal, Madhya Pradesh, India</span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Venue</p>
+      <h2 id="venue-title">Indian Institute of Science Education and Research, Bhopal</h2>
+      <p>Established in 2008 by the Ministry of Education, Government of India, IISER Bhopal is a premier institute dedicated to excellence in science education and research.</p>
+      <p>It promotes interdisciplinary learning across the Natural Sciences, Engineering, Mathematics and Humanities, supported by modern research infrastructure and a vibrant residential campus.</p>
+      <p style="color:var(--muted)">Travel and accommodation details: [TO BE ANNOUNCED]</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section id="sponsors" class="sponsors" aria-labelledby="sponsors-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Support the conference</p>
+        <h2 id="sponsors-title">Sponsors &amp; partners</h2>
+      </div>
+      <p>Our sponsors help keep HAMARI Psi-k accessible to students, early-career researchers and scholars from developing nations.</p>
+    </div>
+
+    <p class="group-label">Platinum sponsors</p>
+    <div class="logos logos-lg">
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+    </div>
+    <p class="group-label">Gold sponsors</p>
+    <div class="logos">
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+    </div>
+    <p class="group-label">Silver sponsors &amp; partners</p>
+    <div class="logos logos-sm">
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+      <div class="logo-slot">[Sponsor logo]</div>
+    </div>
+
+    <div class="become">
+      <div>
+        <h3>Become a sponsor</h3>
+        <p>Reach an international community working in electronic-structure theory, computational materials science, molecular modelling and AI for science, from academia and industry. Sponsorship packages are available on request.</p>
+      </div>
+      <a class="btn btn-primary" href="mailto:hamaripsik2027@iiserb.ac.in?subject=Sponsorship%20%E2%80%93%20HAMARI%20Psi-k%202027">Contact us about sponsorship</a>
+      <p class="become-mail">hamaripsik2027@iiserb.ac.in</p>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="register" aria-labelledby="register-title">
+  <div class="wrap">
+    <div>
+      <h2 id="register-title">Join us in Bhopal</h2>
+      <p>Registration and abstract submission open soon. Students, early-career researchers and scholars from developing nations are especially encouraged to take part.</p>
+      <p style="font-size:16px;margin-top:10px">Questions? Write to <a href="mailto:hamaripsik2027@iiserb.ac.in" style="color:#fff;font-weight:600">hamaripsik2027@iiserb.ac.in</a></p>
+    </div>
+    <a class="btn btn-primary" href="#register">[REGISTRATION LINK]</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="foot-logos"><img src="logo.png" alt="Hamari Psi-k logo"><img src="iiserb-logo.png" alt="IISER Bhopal logo"><span><strong style="color:#fff">HAMARI Psi-k 2027</strong> · 21–24 July 2027 · IISER Bhopal, India</span></span>
+    <span>Contact: <a href="mailto:hamaripsik2027@iiserb.ac.in">hamaripsik2027@iiserb.ac.in</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'), links=document.getElementById('navLinks');
+  btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+</body>
+</html>
