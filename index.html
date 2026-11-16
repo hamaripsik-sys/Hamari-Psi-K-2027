@@ -38,12 +38,12 @@ section{padding:96px 0}
 .brand:hover{color:#fff}
 .brand img{width:42px;height:42px;border-radius:50%}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
-.nav-links a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:#E8E2FA;text-decoration:none;font-size:15px;font-weight:500;border-radius:6px}
+.nav-links a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;padding:0 7px;color:#E8E2FA;text-decoration:none;font-size:14.5px;font-weight:500;border-radius:6px}
 .nav-links a:hover{color:#fff;background:var(--indigo-2)}
 .nav-links a.cta{background:var(--accent);color:var(--indigo);font-weight:600;margin-left:8px}
 .nav-links a.cta:hover{background:#FF7D95;color:var(--indigo)}
 .menu-btn{display:none;min-height:44px;min-width:44px;background:none;border:1px solid var(--line);border-radius:8px;color:#fff;cursor:pointer}
-@media (max-width:1180px){
+@media (max-width:1300px){
   .menu-btn{display:inline-flex;align-items:center;justify-content:center}
   .nav-links{display:none;position:absolute;left:0;right:0;top:68px;flex-direction:column;align-items:stretch;background:var(--indigo);padding:8px 20px 20px;border-bottom:1px solid var(--line)}
   .nav-links.open{display:flex}
@@ -164,11 +164,45 @@ section{padding:96px 0}
 .venue-card svg{position:absolute;inset:0;width:100%;height:100%}
 .venue-card .big{position:relative;font-family:var(--display);font-weight:800;font-size:44px;line-height:1}
 .venue-card .small{position:relative;color:#E8E2FA;margin-top:8px}
+.venue-photo{position:relative;margin:0;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:var(--indigo)}
+.venue-photo>img{width:100%;height:100%;object-fit:cover}
+.venue-photo figcaption{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:14px;padding:48px 22px 18px;color:#fff;background:linear-gradient(to top,rgba(11,10,28,.85),rgba(11,10,28,0))}
+.venue-photo figcaption b{display:block;font-family:var(--display);font-size:24px;font-weight:800;line-height:1.1}
+.venue-photo figcaption span{font-size:14px;color:#E8E2FA}
+.venue-photo .venue-logo{position:static;width:54px;height:54px;border-radius:50%;background:#fff;padding:2px;box-shadow:none;flex:none}
+.campus-strip{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;margin-top:40px}
+.campus-strip figure{margin:0}
+.campus-strip img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px}
+.campus-strip figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+@media (max-width:760px){.campus-strip{grid-template-columns:1fr}}
+
+/* BHOPAL */
+.bhopal{background:var(--tint)}
+.place{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center;margin-top:56px}
+.place:first-of-type{margin-top:0}
+.place.flip .place-photos{order:2}
+.place-photos img{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px}
+.place-photos.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;height:440px}
+.place-photos.one{aspect-ratio:3/2}
+.place-photos.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:280px 130px;gap:12px}
+.place-photos.grid .main{grid-column:1 / -1}
+.place-body{display:flex;flex-direction:column;gap:14px}
+.place-num{font-family:var(--mono);font-size:14px;color:var(--accent-ink,#C8264A);letter-spacing:.1em}
+.place-body h3{font-size:clamp(26px,3vw,34px);font-weight:800;color:var(--indigo)}
+.place-body p{color:var(--ink)}
+.place-tip{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--muted)!important;text-transform:uppercase}
+@media (max-width:860px){
+  .place{grid-template-columns:1fr;gap:24px}
+  .place.flip .place-photos{order:0}
+  .place-photos.two{height:340px}
+  .place-photos.grid{grid-template-rows:200px 90px}
+}
+
 .venue-grid .body{display:flex;flex-direction:column;gap:18px}
 @media (max-width:860px){.venue-grid{grid-template-columns:1fr;gap:32px}}
 
 /* SPONSORS */
-.sponsors{background:var(--tint)}
+.sponsors{background:#fff}
 .logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .logos-lg{grid-template-columns:repeat(2,minmax(0,1fr))}
 .logos-sm{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -197,6 +231,16 @@ section{padding:96px 0}
 .register p{max-width:560px;margin-top:14px;font-size:18px}
 .register .btn-primary{background:var(--accent);color:var(--night)}
 .register .btn-primary:hover{background:#FF7D95;color:var(--night)}
+
+/* INSTITUTES */
+.institutes{background:#fff;padding:56px 0;border-top:1px solid #E0D8F0}
+.inst-logos{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;align-items:start}
+.inst-logos li{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.inst-logos img{height:96px;width:auto;max-width:100%;object-fit:contain}
+.inst-logos span{font-weight:600;font-size:15px;color:var(--ink);line-height:1.3}
+.inst-logos small{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:-6px}
+@media (max-width:860px){.inst-logos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.inst-logos{grid-template-columns:repeat(2,minmax(0,1fr))}.inst-logos img{height:80px}}
 
 /* FOOTER */
 footer{background:var(--night);color:#D8D0F0;padding:48px 0;font-size:15px}
@@ -228,6 +272,7 @@ footer a:hover{color:var(--accent)}
       <li><a href="#speakers">Speakers</a></li>
       <li><a href="#committee">Organisers</a></li>
       <li><a href="#venue">Venue</a></li>
+      <li><a href="#bhopal">Bhopal</a></li>
       <li><a href="#sponsors">Sponsors</a></li>
       <li><a class="cta" href="#register">Register</a></li>
     </ul>
@@ -463,19 +508,10 @@ footer a:hover{color:var(--accent)}
 <!-- VENUE -->
 <section id="venue" aria-labelledby="venue-title">
   <div class="wrap venue-grid">
-    <div class="venue-card">
-      <svg aria-hidden="true" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <pattern id="hex2" width="31.18" height="54" patternUnits="userSpaceOnUse" patternTransform="rotate(-6) scale(1.3)">
-            <path d="M15.59 0 V18 M15.59 18 L0 27 M15.59 18 L31.18 27 M0 27 V45 M31.18 27 V45 M0 45 L15.59 54 M31.18 45 L15.59 54" fill="none" stroke="#3D2C80" stroke-width="1"/>
-          </pattern>
-        </defs>
-        <rect width="600" height="340" fill="url(#hex2)"/>
-      </svg>
-      <img class="venue-logo" src="iiserb-logo.png" alt="IISER Bhopal logo">
-      <span class="big">IISER Bhopal</span>
-      <span class="small">Bhopal, Madhya Pradesh, India</span>
-    </div>
+    <figure class="venue-photo">
+      <img src="campus-gate.jpg" alt="Main gate of IISER Bhopal">
+      <figcaption><img class="venue-logo" src="iiserb-logo.png" alt=""><span><b>IISER Bhopal</b>Main gate · Bhopal, Madhya Pradesh</span></figcaption>
+    </figure>
     <div class="body">
       <p class="eyebrow">Venue</p>
       <h2 id="venue-title">Indian Institute of Science Education and Research, Bhopal</h2>
@@ -483,6 +519,64 @@ footer a:hover{color:var(--accent)}
       <p>It promotes interdisciplinary learning across the Natural Sciences, Engineering, Mathematics and Humanities, supported by modern research infrastructure and a vibrant residential campus.</p>
       <p style="color:var(--muted)">Travel and accommodation details: [TO BE ANNOUNCED]</p>
     </div>
+  </div>
+  <div class="wrap campus-strip">
+    <figure><img src="campus-aerial.jpg" alt="Aerial view of the IISER Bhopal campus" loading="lazy"><figcaption>The IISER Bhopal campus</figcaption></figure>
+    <figure><img src="campus-lawn.jpg" alt="IISER Bhopal lawns, sculpted entrance wall and national flag" loading="lazy"><figcaption>Campus lawns</figcaption></figure>
+  </div>
+</section>
+
+<!-- EXPLORE BHOPAL -->
+<section id="bhopal" class="bhopal" aria-labelledby="bhopal-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Places to visit</p>
+        <h2 id="bhopal-title">Explore Bhopal, the City of Lakes</h2>
+      </div>
+      <p>Make time around the conference to see some of Bhopal’s best-known sights. Both museums are on Shyamla Hills, close to each other and a short drive from the Upper Lake.</p>
+    </div>
+
+    <article class="place">
+      <div class="place-photos two">
+        <img style="object-position:20% center" src="lake-rajabhoj.jpg" alt="Statue of Raja Bhoj on a pillar in the Upper Lake" loading="lazy">
+        <img src="lake-view.jpg" alt="View across the Upper Lake, Bhopal" loading="lazy">
+      </div>
+      <div class="place-body">
+        <span class="place-num">01</span>
+        <h3>Upper Lake &amp; Raja Bhoj Statue</h3>
+        <p>Bhojtal, the Upper Lake, is said to have been built by the Paramara king Raja Bhoj in the 11th century, and the city has grown up around it. Together with the Lower Lake it forms the Bhoj Wetland, a Ramsar site.</p>
+        <p>A 32-foot statue of Raja Bhoj, installed in 2011 to mark a thousand years since his reign, stands on a pillar in the lake. Evenings along the lakefront are especially lovely.</p>
+      </div>
+    </article>
+
+    <article class="place flip">
+      <div class="place-photos grid">
+        <img class="main" src="tribal-1.jpg" alt="Gallery of jute figures and tribal crafts at the Tribal Museum, Bhopal" loading="lazy">
+        <img src="tribal-2.jpg" alt="Painted tribal house façade at the Tribal Museum" loading="lazy">
+        <img src="tribal-3.jpg" alt="Installation at the Tribal Museum" loading="lazy">
+        <img src="tribal-4.jpg" alt="Tree-house installation at the Tribal Museum" loading="lazy">
+      </div>
+      <div class="place-body">
+        <span class="place-num">02</span>
+        <h3>Madhya Pradesh Tribal Museum</h3>
+        <p>Opened in 2013 on Shyamla Hills, the Tribal Museum brings the cultures of Madhya Pradesh’s tribes to life through immersive installations of their architecture, crafts, art and rituals.</p>
+        <p>Its six themed galleries celebrate the state’s major tribal communities, including the Gond, Bhil, Baiga, Korku, Sahariya, Kol and Bharia.</p>
+        <p class="place-tip">Closed on Mondays</p>
+      </div>
+    </article>
+
+    <article class="place">
+      <div class="place-photos one">
+        <img src="state-museum.jpg" alt="Façade of the State Museum, Bhopal" loading="lazy">
+      </div>
+      <div class="place-body">
+        <span class="place-num">03</span>
+        <h3>State Museum</h3>
+        <p>Established in 1964, the State Museum moved to its striking present building on Shyamla Hills in 2005. It is the state’s flagship museum for the art and history of Madhya Pradesh.</p>
+        <p>Highlights include stone sculptures from the 6th to 10th centuries, coins, manuscripts and miniature paintings, and fossils.</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -528,6 +622,20 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 </main>
+
+<!-- ORGANISING INSTITUTES -->
+<section class="institutes" aria-labelledby="inst-title">
+  <div class="wrap">
+    <p class="eyebrow" id="inst-title" style="text-align:center">Organising institutes</p>
+    <ul class="inst-logos">
+      <li><img src="iiserb-logo.png" alt="IISER Bhopal logo"><span>IISER Bhopal</span><small>Host institute</small></li>
+      <li><img src="inst-iiserp.png" alt="IISER Pune logo"><span>IISER Pune</span></li>
+      <li><img src="inst-jncasr.png" alt="JNCASR Bengaluru logo"><span>JNCASR Bengaluru</span></li>
+      <li><img src="inst-iisc.png" alt="IISc Bengaluru logo"><span>IISc Bengaluru</span></li>
+      <li><img src="inst-iitg.png" alt="IIT Guwahati logo"><span>IIT Guwahati</span></li>
+    </ul>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
